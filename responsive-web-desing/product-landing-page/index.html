@@ -6,62 +6,75 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <!-- font's -->
         <link
-            href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:100,100i,400,400i,700,700i&display=swap"
+            href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,400,700&display=swap"
             rel="stylesheet">
         <!-- StyleSheet  -->
-        <link rel="stylesheet" href="./static/style.css">
+        <link rel="stylesheet" href="./static/css/style.css">
         <title>Product Landing page</title>
     </head>
     <body>
         <header id="header">
             <!-- start nav-bar -->
-            <div class="nav-bar">
-                <a href="#">
-                    <img id="header-img" src="" alt="logo">
+            <div class="navbar">
+                <a href="#" class="logo">
+                    <img
+                        id="header-img"
+                        src="./static/img/icons8-applications-apple-watch-96.png"
+                        alt="logo"
+                        width="32"
+                        height="32"
+                        alt="logo">
                 </a>
-                <nav id="nav-bar">
-                    <a class="nav-link" href="#">Featurs</a>
-                    <a class="nav-link" href="#">About</a>
-                    <a class="nav-link" href="#">Pricing</a>
+                <nav id="nav-bar" class="navbar-links">
+                    <a class="nav-link" href="#featurs">Featurs</a>
+                    <a class="nav-link" href="#about">About</a>
+                    <a class="nav-link" href="#pricing">Pricing</a>
                 </nav>
             </div>
             <!-- end nav-bar -->
 
             <!-- start jumbotron -->
-            <div class="jumbotron">
-                <h1>Product page</h1>
-                <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Officia
-                    obcaecati sunt ex nemo ut! Excepturi asperiores doloremque
-                    aperiam
-                    magnam, tempora nihil pariatur quisquam nisi cum, atque quae
-                    quaerat
-                    odit harum!
-                </p>
-                <form action="">
-                    <input
-                        type="search"
-                        name="email"
-                        id="email"
-                        placeholder="Your email ..."
-                        required>
-                    <input
-                        type="submit"
-                        id="submit"
-                        value="Join">
-                </form>
+            <div class="jumbotron container">
+                <div class="jumbotron-content col-5">
+                    <h1>Novo x1</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Obcaecati corrupti eligendi maxime tempore quia aperiam
+                        voluptas explicabo ratione laudantium similique
+                        dignissimos facere minus totam, nam voluptatibus optio
+                        exercitationem, praesentium ipsam.
+                    </p>
+                    <form action="https://freecodecamp.com/email-sumbit" id="form">
+                        <input
+                            type="email"
+                            name="email"
+                            id="email"
+                            placeholder="Your email ..."
+                            required>
+                        <input
+                            type="submit"
+                            id="submit"
+                            value="Join">
+                    </form>
+                </div>
+                <div class="jumbotron-img col-5">
+                    <img
+                        class="img-responsive"
+                        src="./static/img/product.png"
+                        alt="smartwatch">
+                </div>
             </div>
             <!-- end jumbotron -->
         </header>
-        <main>
+        <main class="container">
             <!-- start featues section -->
             <section id="featurs">
-                <div>
-                    <div>
-                        <img src="" alt="">
+                <div class="flex">
+                    <div class="col-4 featur">
+                        <img
+                            src="https://img.icons8.com/cute-clipart/128/000000/charge-battery.png">
                         <div>
-                            <h4>Featur</h4>
+                            <h4>Fast Charge</h4>
                             <p>
                                 Lorem ipsum dolor sit amet consectetur
                                 adipisicing elit. Hic similique reprehenderit
@@ -72,10 +85,11 @@
                             </p>
                         </div>
                     </div>
-                    <div>
-                        <img src="" alt="">
+                    <div class="col-4 featur">
+                        <img
+                            src="https://img.icons8.com/cute-clipart/128/000000/wifi.png">
                         <div>
-                            <h4>Featur</h4>
+                            <h4>Great Wifi</h4>
                             <p>
                                 Lorem ipsum dolor sit amet consectetur
                                 adipisicing elit. Hic similique reprehenderit
@@ -86,10 +100,11 @@
                             </p>
                         </div>
                     </div>
-                    <div>
-                        <img src="" alt="">
+                    <div class="col-4 featur">
+                        <img
+                            src="https://img.icons8.com/cute-clipart/128/000000/us-dollar.png">
                         <div>
-                            <h4>Featur</h4>
+                            <h4>Low price</h4>
                             <p>
                                 Lorem ipsum dolor sit amet consectetur
                                 adipisicing elit. Hic similique reprehenderit
@@ -105,37 +120,81 @@
             <!-- end featues section -->
 
             <!-- start about / how it works section -->
-            <section id="about">
-                
+            <section id="about" align="center">
+                <h4>What our review video</h4>
+                <!-- Youtube video -->
+                <iframe src="http://www.youtube.com/embed/W7qWa52k-nE"
+                    width="560"
+                    height="315"
+                    frameborder="0"
+                    allowfullscreen
+                    id="video">
+                </iframe>
             </section>
             <!-- end about / how it works section -->
 
             <!-- start pricing section -->
             <section id="pricing">
-                <div>
-                    <div>
-                        <h4>Pricing</h4>
-                        <ul>
-                            <li>Test</li>
-                            <li>Test</li>
-                            <li>Test</li>
-                        </ul>
+                <div class="flex">
+                    <div class="col-4">
+                        <div class="pricing-card">
+                            <h5 class="pricing-title">Novo x1 lite</h5>
+                            <div class="pricing-details">
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Hic similique
+                                    reprehenderit
+                                    nemo optio nisi porro? Eveniet ex
+                                    dignissimos
+                                    voluptate consequatur a. Reiciendis ipsum
+                                    earum
+                                    inventore ea fugiat nulla voluptatibus
+                                    laboriosam?
+                                </p>
+                                <span class="price">300$</span>
+                                <button class="buy">Buy it</button>
+                            </div>
+                        </div>
                     </div>
-                    <div>
-                        <h4>Pricing</h4>
-                        <ul>
-                            <li>Test</li>
-                            <li>Test</li>
-                            <li>Test</li>
-                        </ul>
+                    <div class="col-4">
+                        <div class="pricing-card">
+                            <h5 class="pricing-title">Novo x1</h5>
+                            <div class="pricing-details">
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Hic similique
+                                    reprehenderit
+                                    nemo optio nisi porro? Eveniet ex
+                                    dignissimos
+                                    voluptate consequatur a. Reiciendis ipsum
+                                    earum
+                                    inventore ea fugiat nulla voluptatibus
+                                    laboriosam?
+                                </p>
+                                <span class="price">300$</span>
+                                <button class="buy">Buy it</button>
+                            </div>
+                        </div>
                     </div>
-                    <div>
-                        <h4>Pricing</h4>
-                        <ul>
-                            <li>Test</li>
-                            <li>Test</li>
-                            <li>Test</li>
-                        </ul>
+                    <div class="col-4">
+                        <div class="pricing-card">
+                            <h5 class="pricing-title">Novo x1 MAX</h5>
+                            <div class="pricing-details">
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Hic similique
+                                    reprehenderit
+                                    nemo optio nisi porro? Eveniet ex
+                                    dignissimos
+                                    voluptate consequatur a. Reiciendis ipsum
+                                    earum
+                                    inventore ea fugiat nulla voluptatibus
+                                    laboriosam?
+                                </p>
+                                <span class="price">300$</span>
+                                <button class="buy">Buy it</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -144,8 +203,17 @@
 
         <!-- start footer -->
         <footer>
-
+            <div class="container">
+                <div class="flex jc-between">
+                    <a href="" class="col-4">Privacy</a>
+                    <a href="" class="col-4">Terms</a>
+                    <a href="" class="col-4">Contact</a>
+                </div>
+            </div>
         </footer>
         <!-- end footer -->
+        <!-- FCC -->
+        <script
+            src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
     </body>
 </html>

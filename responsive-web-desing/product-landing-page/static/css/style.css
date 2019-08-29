@@ -1,0 +1,227 @@
+:root {
+    --color-typo: #34495E;
+}
+
+* {
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+/* resets */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    color: var(--color-typo, #000);
+    background: #fff;
+    margin: 0;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h4 {
+    font-size: 1.8rem;
+}
+
+p {
+    font-size: .9rem;
+    line-height: 1.5;
+    font-weight: 400;
+    color: rgb(86, 111, 136);
+}
+
+/* util class's */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.img-responsive {
+    max-width: 100%;
+    display: block;
+    height: auto;
+}
+
+.col-5 {
+    width: 50%;
+}
+
+.col-4 {
+    width: 33, 33%;
+}
+
+.flex {
+    display: flex;
+    width: 100%;
+}
+
+.jc-between {
+    justify-content: space-between;
+}
+
+/* resposive media query */
+@media (max-width: 600px) {
+    .flex,
+    header .jumbotron {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* start header styling */
+header {
+    background-color: rgb(241, 241, 241);
+}
+
+header .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    background-color: rgb(52, 105, 219);
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.25);
+    z-index: 999;
+}
+
+header .navbar .logo {
+    padding: 1rem;
+}
+
+header .navbar .navbar-links {
+    display: flex;
+    align-items: center;
+}
+
+header .navbar .navbar-links .nav-link {
+    padding: 1.4rem;
+    font-size: 1rem;
+    text-decoration: none;
+    color: white;
+}
+
+/* jumbotron styling */
+header .jumbotron {
+    padding: 5rem 0;
+    display: flex;
+}
+
+header .jumbotron .jumbotron-content {
+    align-self: center;
+}
+
+header .jumbotron .jumbotron-content form {
+    display: flex;
+}
+
+header .jumbotron .jumbotron-content input[type="email"] {
+    padding: .5rem;
+    flex: 1;
+    border: none;
+    box-shadow: inset 0px -4px 0px rgb(52, 219, 163);
+    font-size: 1rem;
+}
+
+header .jumbotron .jumbotron-content input[type="submit"] {
+    border: none;
+    padding: 1rem 2rem;
+    margin-left: 1rem;
+    color: white;
+    background-color: rgb(52, 219, 163);
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+/* end header styling */
+
+/* featues section */
+#featurs {
+    margin: 2rem 0;
+}
+
+#featurs .featur {
+    padding: 1rem 1.5rem;
+    margin: 0 .5rem;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: .5s all ease-in-out;
+}
+
+#featurs .featur:hover {
+    transform: scale(1.1);
+    background-color: rgb(223, 223, 223);
+}
+
+/* end featues section */
+
+/* about section */
+#about h4 {
+    text-align: center;
+}
+
+/* end about section */
+
+/* pricing section  */
+#pricing {
+    margin: 2rem 0;
+}
+
+#pricing .pricing-card {
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    margin: .5rem;
+}
+
+#pricing .pricing-card .pricing-title {
+    color: white;
+    background-color: rgb(52, 219, 163);
+    margin: 0;
+    padding: 1rem;
+    font-size: 1.2rem;
+}
+
+#pricing .pricing-card .pricing-details {
+    padding: 1rem;
+    font-size: 1rem;
+    line-height: 1;
+}
+
+#pricing .pricing-card .pricing-details .price {
+    display: inline-block;
+    padding: .75rem;
+    background-color: rgb(52, 105, 219);
+    color: white;
+}
+
+#pricing .pricing-card .pricing-details .buy {
+    display: inline-block;
+    padding: .75rem;
+    background-color: rgb(52, 219, 163);
+    color: white;
+    border: none;
+    text-transform: uppercase;
+    outline: none;
+    cursor: pointer;
+}
+
+/* end pricing section */
+
+/* footer */
+footer {
+    padding: 1.5rem 0;
+    background-color: #34495E;
+    color: white;
+}
+
+footer a {
+    color: white;
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+/* end footer */
