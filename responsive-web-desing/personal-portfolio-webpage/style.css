@@ -2,6 +2,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+    box-sizing: border-box;
 }
 
 body {
@@ -72,17 +73,19 @@ body {
 }
 
 .navigation-link {
-    color: #ffffff;
+    color: rgba(255, 255, 255, .8);
     text-decoration: none;
     text-transform: uppercase;
     margin: 0 2em;
-    font-size: 1.1em;
-    font-weight: 700;
+    padding-bottom: .5em;
+    font-size: 1em;
+    font-weight: 400;
     transition: all .3s ease-in-out;
 }
 
 .navigation-link:hover {
-    color: #01516e;
+    color: #fff;
+    box-shadow: inset 0px -2px 0px 0px #fff;
 }
 
 /* main styling */
@@ -95,7 +98,7 @@ body {
 
 .project {
     flex: 0 1 calc(33.33% - 1em);
-    border-radius: .5em;
+    margin-bottom: 1em;
 }
 
 
@@ -167,8 +170,15 @@ body {
 
 .lead {
     font-size: 1.4em;
+    font-weight: 400;
     line-height: 1.5;
     margin: .25em 0 1em 0;
+}
+
+.lead-custom {
+    font-size: 1.8em;
+    color: rgba(255, 255, 255, .8);
+    text-shadow: 2px 2px rgba(0, 0, 0, .1);
 }
 
 .section-title {
@@ -197,4 +207,63 @@ body {
 .btn-white:hover {
     background-color: #01516e;
     color: #fff;
+}
+
+/* responsive */
+
+/* medium */
+@media screen and (max-width: 900px) {
+    .project {
+        flex: 0 1 calc(50% - 1em);
+        border-radius: .5em;
+    }
+}
+
+/* navigation on small */
+@media screen and (max-width: 730px) {
+    .header-upper {
+        flex-direction: column;
+        align-items: center;
+    }
+    .navigation-link {
+        margin: 0 1em;
+    }
+    .header-logo {
+        position: relative;
+        margin-bottom: .5em;
+    }
+    .header-logo::after {
+        content: '';
+        display: block;
+        margin: 0 auto;
+        width: 3em; 
+        height: .1em;
+        background-color: #fff;
+        box-shadow: 2px 2px rgba(0, 0, 0, .1);
+    }
+}
+
+/* small */
+@media screen and (max-width: 600px) {
+    .project {
+        flex: 0 1 calc(100% - 1em);
+        border-radius: .5em;
+    }
+
+    .header-logo {
+        font-size: 1.6em;
+    }
+
+    .navigation-link {
+        font-size: 1em;
+    }
+
+    .display {
+        font-size: 3em;
+    }
+
+    .lead {
+        font-size: 1.2em;
+    }
+
 }
