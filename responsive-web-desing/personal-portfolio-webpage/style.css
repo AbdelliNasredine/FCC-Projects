@@ -72,6 +72,45 @@ body {
     align-self: center;
 }
 
+.header-navigation-side {
+    z-index: 999;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    top: 0;
+    right: 0;
+    position: fixed;
+    height: 100vh;
+    width: 50%;
+    padding-top: 2em;
+    font-size: 1.8em !important;
+    background-color: aqua;
+    box-shadow: 0px 0px 0px 9999px rgba(0, 0, 0, .5);
+}
+
+.navigation-menu-btn,
+.navigation-close-btn {
+    display: none;
+    position: absolute;
+    right: 2em;
+    top: 2em;
+    padding: .25em .5em;
+    color: #fff;
+}
+
+.navigation-close-btn {
+    display: block;
+    right: 0;
+    top: 0;
+}
+
+
+.navigation-menu-btn>.material-icons,
+.navigation-side-btn>.material-icons {
+    font-size: 2em;
+}
+
+
 .navigation-link {
     color: rgba(255, 255, 255, .8);
     text-decoration: none;
@@ -152,6 +191,12 @@ body {
     background-color: #1faec7;
 }
 
+/* footer styling */
+.footer {
+    background-color: #01516e;
+    color: #fff;
+}
+
 /* about styling */
 .main-about {
     width: 100%;
@@ -160,6 +205,18 @@ body {
 }
 
 /* custom styling */
+.visible {
+    display: flex;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.center {
+    text-align: center;
+}
+
 .display {
     font-family: 'Playfair Display', cursive;
     font-size: 5em;
@@ -221,26 +278,22 @@ body {
 
 /* navigation on small */
 @media screen and (max-width: 730px) {
-    .header-upper {
-        flex-direction: column;
-        align-items: center;
+    .navigation-menu-btn {
+        display: block;
     }
+
+    .header-navigation {
+        display: none;
+    }
+
+    .header-navigation-side {
+        display: flex;
+    }
+
     .navigation-link {
         margin: 0 1em;
     }
-    .header-logo {
-        position: relative;
-        margin-bottom: .5em;
-    }
-    .header-logo::after {
-        content: '';
-        display: block;
-        margin: 0 auto;
-        width: 3em; 
-        height: .1em;
-        background-color: #fff;
-        box-shadow: 2px 2px rgba(0, 0, 0, .1);
-    }
+
 }
 
 /* small */
