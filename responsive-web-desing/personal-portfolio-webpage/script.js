@@ -6,11 +6,14 @@ window.addEventListener('DOMContentLoaded', function () {
             });
     document.getElementById('menu').addEventListener('click', function() {
         navigation.style.width = "50%";
+        navigation.style.opacity = "1";
+        navigation.style.display = "flex";
         document.getElementById("close").style.display = "block";
         console.log("menu btn clicked !");
     })
     document.getElementById('close').addEventListener('click', function() {
         navigation.style.width = "0";
+        navigation.style.opacity = "0";
         document.getElementById("close").style.display = "none";
         console.log("close btn clicked !");
     });
