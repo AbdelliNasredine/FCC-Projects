@@ -33,7 +33,7 @@ export const fetchRandomQuot = () => {
       .get(QUOTE_API_URL)
       .then(({ data }) => {
         const randIdx = Math.floor(Math.random() * data.length);
-        dispatch(fetchRandomQuotSuccess(data[randIdx]));
+        setTimeout(() => dispatch(fetchRandomQuotSuccess(data[randIdx])), 1000);
       })
       .catch((error) => dispatch(fetchRandomQuotFailed(error)));
   };

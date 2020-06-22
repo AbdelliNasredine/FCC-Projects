@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchRandomQuot } from "../actions/quotActions";
+import Loader from "./Loader";
 
 class Quote extends Component {
   componentDidMount() {
@@ -8,11 +9,24 @@ class Quote extends Component {
   }
 
   render() {
+    const { isLoading, error, quote } = this.props;
+    console.log(error);
     return (
-      <div>
-        <b>The quot is</b>: {this.props.quote.text} <br />
-        <b>The author is</b>: {this.props.quote.author} <br />
-        <b>Loading status</b>: {this.props.isLoading ? "true" : "false"}
+      <div className="Quote">
+        {isLoading ? (
+          <Loader />
+        ) : (
+          <div className="Quote-body">
+            {error ? (
+              <span>Network Error</span>
+            ) : (
+              <>
+                <p>{quote.text}</p>
+                <span>by {quote.author}</span>
+              </>
+            )}
+          </div>
+        )}
       </div>
     );
   }
