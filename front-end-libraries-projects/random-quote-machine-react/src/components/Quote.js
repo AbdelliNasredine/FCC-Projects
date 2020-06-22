@@ -4,8 +4,12 @@ import { fetchRandomQuot } from "../actions/quotActions";
 import Loader from "./Loader";
 
 class Quote extends Component {
-  componentDidMount() {
+  fetchQuot = () => {
     this.props.dispatch(fetchRandomQuot());
+  };
+
+  componentDidMount() {
+    this.fetchQuot();
   }
 
   render() {
@@ -16,13 +20,21 @@ class Quote extends Component {
         {isLoading ? (
           <Loader />
         ) : (
-          <div className="Quote-body">
+          <div id="quot-box" className="Quote-body">
             {error ? (
               <span>Network Error</span>
             ) : (
               <>
-                <p>{quote.text}</p>
-                <span>by {quote.author}</span>
+                <p id="text">{quote.text}</p>
+                <span id="author">by {quote.author}</span>
+                <div className="Quote-actions">
+                  <a href="https://twitter.com/intent/tweet" id="tweet-quote">
+                    tweet
+                  </a>
+                  <button id="new-quote" onClick={this.fetchQuot}>
+                    new quot
+                  </button>
+                </div>
               </>
             )}
           </div>
