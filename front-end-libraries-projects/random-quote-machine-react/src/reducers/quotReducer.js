@@ -5,7 +5,10 @@ import {
 } from "../actions/quotActions";
 
 const INTIAL_STATE = {
-  quote: "testing quote :)",
+  quote: {
+    text: "test quot test",
+    author: "test author",
+  },
   error: null,
   isLoading: false,
 };

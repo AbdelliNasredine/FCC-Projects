@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const QUOTE_API_URL = "";
+const QUOTE_API_URL = "https://type.fit/api/quotes";
 
 export const FETCH_RANDOM_QUOT_STARTED = "FRQS";
 export const FETCH_RANDOM_QUOT_SUCCESS = "FRQSC";
@@ -14,26 +14,26 @@ export const fetchRandomQuotStarted = () => {
 
 export const fetchRandomQuotSuccess = (quote) => {
   return {
-    type: FETCH_RANDOM_QUOT_STARTED,
+    type: FETCH_RANDOM_QUOT_SUCCESS,
     payload: quote,
   };
 };
 
 export const fetchRandomQuotFailed = (error) => {
   return {
-    type: FETCH_RANDOM_QUOT_STARTED,
+    type: FETCH_RANDOM_QUOT_FAILED,
     payload: error,
   };
 };
 
 export const fetchRandomQuot = () => {
   return (dispatch) => {
-    dispatch(fetchRandomQuotSuccess());
+    dispatch(fetchRandomQuotStarted());
     axios
       .get(QUOTE_API_URL)
-      .then((res) => {
-        console.log(res.data);
-        dispatch(fetchRandomQuotSuccess(res.data));
+      .then(({ data }) => {
+        const randIdx = Math.floor(Math.random() * data.length);
+        dispatch(fetchRandomQuotSuccess(data[randIdx]));
       })
       .catch((error) => dispatch(fetchRandomQuotFailed(error)));
   };
