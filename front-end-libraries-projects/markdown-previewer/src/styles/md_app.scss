@@ -16,11 +16,10 @@
 }
 
 .app-container {
-  flex: 1;
   display: flex;
+  margin: .5rem;
 }
 
 .app-container>* {
-  flex: 1;
-  margin: .5rem;
+  // flex: 1;
 }
