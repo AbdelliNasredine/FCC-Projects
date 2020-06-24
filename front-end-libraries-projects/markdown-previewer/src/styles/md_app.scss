@@ -1,14 +1,10 @@
-$primary-color: #3f50b5;
-$primary-color-light: #757ce8;
-$primary-color-dark: #002884;
-$secondary-color: #8c9eff;
-$bg-gray: rgb(211, 222, 230);
+@import "./variables";
 
 .app {
   display: flex;
   flex-direction: column;
   height: 100vh;
-  background: $bg-gray;
+  // background: $bg-gray;
 }
 
 .app--header {
@@ -24,6 +20,7 @@ $bg-gray: rgb(211, 222, 230);
   display: flex;
 }
 
-.app-container > * {
+.app-container>* {
   flex: 1;
+  margin: .5rem;
 }
