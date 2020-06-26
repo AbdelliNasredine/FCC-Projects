@@ -1,18 +1,20 @@
-import React from "react";
+import React, { Component } from "react";
 import MDTextArea from "./MDTextArea";
 import MDPreview from "./MDPreview";
 import "../styles/md_app.scss";
 
-function MDApp() {
-  return (
-    <div className="app">
-      <header className="app--header">MarkDown Previewer</header>
-      <div className="app-container">
-        <MDTextArea />
-        <MDPreview />
+class MDApp extends Component {
+  render() {
+    return (
+      <div className="app">
+        <header className="app--header">MarkDown Previewer</header>
+        <div className="app-container">
+          <MDTextArea />
+          <MDPreview />
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 export default MDApp;

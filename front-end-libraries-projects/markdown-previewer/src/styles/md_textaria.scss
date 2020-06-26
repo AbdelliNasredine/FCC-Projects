@@ -3,6 +3,7 @@
 .md-textaria-panel {
   display: flex;
   flex-direction: column;
+  margin-right: .5rem;
 
   .header {
     padding: .25rem;
@@ -11,7 +12,7 @@
     border-top-right-radius: .25rem;
     font-size: 1rem;
     color: white;
-    font-weight: 600;
+    // font-weight: 600;
   }
 
   .textaria {
