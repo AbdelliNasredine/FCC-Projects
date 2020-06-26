@@ -13,6 +13,24 @@ How To Use The Demo
 1. Type in stuff on the left.
 2. See the live updates on the right.
 
+How To Use The Demo
+-------------------
+
+1. Type in stuff on the left.
+2. See the live updates on the right.
+
+How To Use The Demo
+-------------------
+
+1. Type in stuff on the left.
+2. See the live updates on the right.
+
+How To Use The Demo
+-------------------
+
+1. Type in stuff on the left.
+2. See the live updates on the right.
+
 [Markdown]: http://daringfireball.net/projects/markdown/
 `;
 
@@ -34,10 +52,9 @@ class MDPreview extends Component {
     return (
       <div className="md-preview-panel">
         <div className="header">Preview</div>
-        <div
-          ref={(domElement) => (this.domElement = domElement)}
-          className="view"
-        ></div>
+        <div className="view">
+          <div ref={(domElement) => (this.domElement = domElement)}></div>
+        </div>
       </div>
     );
   }
