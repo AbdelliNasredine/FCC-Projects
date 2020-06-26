@@ -6,7 +6,10 @@ class MDTextArea extends Component {
     return (
       <div className="md-textaria-panel">
         <div className="header">Editor</div>
-        <textarea className="textaria" />
+        <textarea
+          className="textaria"
+          onChange={(e) => this.props.onChangeHandler(e.target.value)}
+        />
       </div>
     );
   }
