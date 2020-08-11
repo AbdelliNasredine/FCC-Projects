@@ -208,6 +208,50 @@ body {
   padding: 1em 0;
 }
 
+/* modal styling */
+.modal {
+  display: none;
+  z-index: 9999;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #000;
+}
+
+.modal.show {
+  display: block;
+}
+
+.modal-content {
+  transform: translateY(-100%);
+  background-color: #fff;
+  padding: 1.5rem;
+  transition: all ease-in-out 0.3s;
+}
+
+.modal-content.show {
+  transform: translateY(0);
+}
+
+.modal-content p {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content span {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  color: #fff;
+  background-color: #1faec7;
+  border: 1px solid #1faec7;
+  border-radius: 0.25rem;
+}
+
+.modal-content span:not(:last-child) {
+  margin-right: 0.25rem;
+}
+
 /* custom styling */
 .visible {
   display: flex;
