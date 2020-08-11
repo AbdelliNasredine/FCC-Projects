@@ -24,15 +24,18 @@ window.addEventListener("DOMContentLoaded", function () {
   // looping through all the buttons
   // and add a click event handler
   const onClickHandler = function () {
-    // console.log(this);
+    // add project title to modal
+    const projectElement = this.parentElement.previousElementSibling;
+    const projectTitle = projectElement.querySelector(".project-title")
+      .innerText;
+    modalContent.querySelector("h2").innerText = projectTitle;
     // show the modal
-    console.log(modalContent);
     modal.classList.add("show");
     setTimeout(() => modalContent.classList.add("show"), 10);
   };
-  projectsViewLinks.forEach((btn) =>
-    btn.addEventListener("click", onClickHandler)
-  );
+  projectsViewLinks.forEach((btn) => {
+    btn.addEventListener("click", onClickHandler);
+  });
   // add 'close' handler to modal
   document.getElementById("modal-close").addEventListener("click", function () {
     modalContent.classList.remove("show");
