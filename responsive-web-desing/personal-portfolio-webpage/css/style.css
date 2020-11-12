@@ -1,0 +1,254 @@
+:root {
+  --primary: rgb(91, 53, 179);
+  --bg-gary: rgb(221, 213, 238);
+  --from: rgba(121, 84, 209, 0.9);
+  --to: rgba(66, 40, 161, 0.9);
+  --gradient: linear-gradient(var(--from), var(--to));
+  --font-family: "Josefin Sans", sans-serif;
+  --text-body-family: sans-serif;
+  --text-body-color: rgba(0, 0, 0, 0.8);
+  --text-body-size: 12px;
+  --text-light: 300;
+  --text-normal: 400;
+  --text-bold: 700;
+}
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: var(--text-body-color);
+  font-family: var(--font-family);
+  font-size: var(--text-body-size);
+  font-weight: var(--text-normal);
+  line-height: 1.2;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary);
+}
+
+section,
+footer {
+  padding: 2rem 0;
+}
+
+.container {
+  max-width: 960px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 0.875rem;
+}
+
+.section-title {
+  font-size: 2rem;
+  padding-bottom: 2rem;
+  color: #000;
+  text-align: center;
+}
+
+.section-title:after {
+  content: "";
+  display: block;
+  margin: 0.5rem auto;
+  width: 2rem;
+  height: 4px;
+  background-color: var(--primary);
+}
+
+/* navbar */
+#navbar {
+  z-index: 4;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1);
+}
+
+#navbar nav {
+  display: flex;
+  justify-content: flex-end;
+}
+#navbar nav a {
+  padding: 1rem 1.125rem;
+  font-size: 1.125rem;
+  font-weight: bold;
+  text-transform: capitalize;
+  text-decoration: none;
+  color: rgb(51, 51, 51);
+}
+
+#navbar nav a:hover,
+#navbar nav a:active {
+  background-color: rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 -3px 0 0 var(--primary);
+  color: #000;
+  transition: 0.3s ease all;
+}
+
+/* WELCOME SECTION */
+#welcome-section {
+  background: var(--gradient);
+  height: 100vh;
+}
+
+#welcome-section .wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+#welcome-section .wrapper .info,
+#welcome-section .wrapper .illustration {
+  padding: 1rem;
+  color: #fff;
+}
+
+#welcome-section .wrapper .illustration img {
+  max-width: 320px;
+  height: auto;
+}
+
+.info span {
+  color: rgba(255, 255, 255, 0.7);
+  display: block;
+}
+
+/* PROJECTS SECTION */
+#projects {
+  padding: 2rem 0;
+}
+
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem 0;
+}
+
+.project-card {
+  position: relative;
+  text-decoration: none;
+  color: var(--text-body-color);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1), 0 1px 1px rgba(0, 0, 0, 0.3);
+  transition: 0.3s ease all;
+  overflow: hidden;
+}
+
+.project-card:hover,
+.project-card:focus {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3), 0 1px 1px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
+  transition: 0.3s ease all;
+}
+
+.project-card::after {
+  z-index: 3;
+  content: "View project";
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 1.5rem;
+  color: #fff;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+  font-weight: var(--text-bold);
+  background: var(--gradient);
+  transition: 0.2s ease all;
+}
+
+.project-card:hover::after,
+.project-card:focus::after {
+  top: 0;
+  transition: 0.2s ease all;
+}
+
+.project-card .project-image {
+  max-width: 100%;
+  height: auto;
+}
+
+.project-card .project-body {
+  padding: 1rem;
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+.project-body .project-title {
+  color: #000;
+  font-size: 1.125rem;
+}
+
+.project-body .project-skill {
+  display: inline-block;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: var(--text-light);
+  font-size: 0.625rem;
+  line-height: 0.625rem;
+  background-color: var(--primary);
+  padding: 0.25em;
+  margin: 0.5em 0;
+}
+
+/* ABOUT SECTION */
+#about {
+  background-color: var(--bg-gary);
+}
+
+#about p {
+  width: 90%;
+  margin: 0 auto;
+  padding-bottom: 2rem;
+  font-size: 1.25rem;
+  line-height: 1.4;
+}
+
+/* FOOTER */
+footer {
+  background-color: var(--primary);
+  text-align: center;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.social-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  text-decoration: none;
+  margin: 0.5rem 0;
+  padding: 0;
+}
+
+.social-links img {
+  width: 48px;
+  height: 48px;
+}
