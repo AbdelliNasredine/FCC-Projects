@@ -148,7 +148,7 @@ footer {
   padding: 2rem 0;
 }
 
-.project-card {
+.project-tile {
   position: relative;
   text-decoration: none;
   color: var(--text-body-color);
@@ -157,14 +157,14 @@ footer {
   overflow: hidden;
 }
 
-.project-card:hover,
-.project-card:focus {
+.project-tile:hover,
+.project-tile:focus {
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3), 0 1px 1px rgba(0, 0, 0, 0.3);
   transform: scale(1.05);
   transition: 0.3s ease all;
 }
 
-.project-card::after {
+.project-tile::after {
   z-index: 3;
   content: "View project";
   position: absolute;
@@ -183,18 +183,26 @@ footer {
   transition: 0.2s ease all;
 }
 
-.project-card:hover::after,
-.project-card:focus::after {
+.project-tile:hover::after,
+.project-tile:focus::after {
   top: 0;
   transition: 0.2s ease all;
 }
 
-.project-card .project-image {
-  max-width: 100%;
-  height: auto;
+.project-tile .project-image {
+  margin: 0 auto;
+  background-color: #ccc;
+  max-height: 180px;
+  text-align: center;
+  overflow: hidden;
 }
 
-.project-card .project-body {
+.project-tile .project-image img {
+  max-width: 100%;
+  height: au;
+}
+
+.project-tile .project-body {
   padding: 1rem;
   font-size: 0.875rem;
   line-height: 1.4;
@@ -251,4 +259,23 @@ footer {
 .social-links img {
   width: 48px;
   height: 48px;
+}
+
+/* MOBILE DESIGN */
+@media only screen and (max-width: 768px) {
+  #navbar nav {
+    justify-content: center;
+  }
+  #welcome-section .wrapper {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  #welcome-section .wrapper .illustration {
+    display: none;
+  }
+
+  #about p {
+    font-size: 1rem;
+  }
 }
