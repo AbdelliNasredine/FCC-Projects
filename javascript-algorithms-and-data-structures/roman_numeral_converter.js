@@ -5,21 +5,37 @@
  */
 
 function convertToRoman(num) {
-  const romanSymbols = {
-    1: "I",
-    5: "V",
-    10: "X",
-    50: "L",
-    100: "C",
-    500: "D",
-    1000: "M"
+  const symbols = {
+    M: 1000,
+    CM: 900,
+    DC: 600,
+    D: 500,
+    CD: 400,
+    C: 100,
+    XC: 90,
+    LX: 60,
+    L: 50,
+    XL: 40,
+    X: 10,
+    IX: 9,
+    VI: 6,
+    V: 5,
+    IV: 4,
+    I: 1,
   };
-  let chunks = [];
-  while (num) {
-    chunks.push(num % 10);
-    num = Math.floor(num / 10);
+  let roman = "";
+  for (let symbol in symbols) {
+    while (num >= symbols[symbol]) {
+      roman += symbol;
+      num -= symbols[symbol];
+    }
   }
-  // TODO : converse each chunk to symbol
+
+  return roman;
 }
 
-convertToRoman(36);
+convertToRoman(3);
+convertToRoman(891);
+convertToRoman(2014);
+convertToRoman(1006);
+convertToRoman(3999);
